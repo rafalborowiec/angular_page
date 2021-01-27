@@ -10,7 +10,13 @@ import { CreateComponent } from "./create/create.component";
 import { reducer } from "./reducers/tutorial.reducer";
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    StoreModule.forRoot({
+      tutorial: reducer
+    })
+  ],
   declarations: [AppComponent, HelloComponent, ReadComponent, CreateComponent],
   bootstrap: [AppComponent]
 })
