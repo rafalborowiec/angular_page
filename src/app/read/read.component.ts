@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "@rxjs/Observable";
+import { Observable } from "rxjs";
 import { Store } from "@ngrx/store";
 import { Tutorial } from "./../models/tutorial.model";
 import { AppState } from "./../app.state";
@@ -10,7 +10,10 @@ import { AppState } from "./../app.state";
   styleUrls: ["./read.component.css"]
 })
 export class ReadComponent implements OnInit {
-  constructor() {}
+  tutorials: Observable<Tutorial[]>;
+  constructor(private store: Store<AppState>) {
+    this.tutorials = store.select("tutorial");
+  }
 
   ngOnInit() {}
 }
