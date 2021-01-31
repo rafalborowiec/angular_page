@@ -9,7 +9,7 @@ const initialState: Tutorial = {
 
 export function reducer(state: Tutorial[], action: TutorialActions.Actions) {
   switch (action.type) {
-    case "ADD_TUTORIAL":
+    case "[TUTORIAL] Add":
       return [...state, action.payload];
     default:
       return state;
